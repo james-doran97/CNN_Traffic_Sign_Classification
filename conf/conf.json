@@ -1,0 +1,14 @@
+{
+    "hyperparameters":[
+        {
+            "epochs": 20,
+            "batch_size": 10,
+            "epch_steps": 100,
+            "test_ratio": 0.2,
+            "learning_rate": 0.001,
+            "no_of_nodes": 500,
+            "no_of_filters": 60            
+
+        }
+    ]
+}
