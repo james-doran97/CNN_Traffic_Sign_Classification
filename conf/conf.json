@@ -7,7 +7,8 @@
             "test_ratio": 0.2,
             "learning_rate": 0.001,
             "no_of_nodes": 500,
-            "no_of_filters": 60            
+            "no_of_filters": 60,
+            "class_count": 58            
 
         }
     ]
