@@ -3,6 +3,7 @@ import tensorflow as tf
 from joblib import load
 import json
 import os
+import numpy as np
 
 from sklearn.metrics import accuracy_score
 
@@ -11,14 +12,17 @@ MODEL_DIR = os.environ["MODEL_DIR"]
 model_file = 'cnn_model.joblib'
 model_path = os.path.join(MODEL_DIR, model_file)
 
-# Set path for the input (test data)
+# Set path for the input test data
 PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
-test_data_path = os.path.join(PROCESSED_DATA_DIR, "testDS")
-dataset_tf_element_spec = tuple((tf.TensorSpec((None, 100, 100, 58))))
-# test data loaded 
-test_ds = tf.data.experimental.load(test_data_path, dataset_tf_element_spec, compression = "GZIP")
+X_test_path = os.path.join(PROCESSED_DATA_DIR, 'X_test_ds.txt')
+Y_test_path = os.path.join(PROCESSED_DATA_DIR, 'Y_test_ds.txt')
 
+# Test data loaded from directory
+loaded_X_test = np.loadtxt("X_train.txt")
+Y_test = np.loadtxt(Y_test_path)
 
+# Independant test variable reshaped back into original 3D shape
+X_test = loaded_X_test.reshape(loaded_X_test.shape[0], loaded_X_test.shape[1] // 100, 100)
 
 
 
@@ -27,8 +31,6 @@ cnn_model = load(model_path)
 
 # Compute test accuracy
 score=cnn_model.evaluate(X_test,Y_test,verbose=0)
-print('Test Score: ',score[0])
-print('Test Accuracy: ',score[1])
 
 # Test accuracy to JSON
 test_metadata = {
