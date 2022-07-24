@@ -1,11 +1,8 @@
-import pandas as pd
-import tensorflow as tf
 from joblib import load
 import json
 import os
 import numpy as np
 
-from sklearn.metrics import accuracy_score
 
 
 MODEL_DIR = os.environ["MODEL_DIR"]
@@ -33,7 +30,7 @@ cnn_model = load(model_path)
 score=cnn_model.evaluate(X_test,Y_test,verbose=0)
 
 # Test accuracy to JSON
-test_metadata = {
+eval_metadata = {
     "Test Score": score[0],
     "Test Accuracy": score[1]
 }
@@ -41,9 +38,9 @@ test_metadata = {
 
 # Set output path
 METRICS_DIR = os.environ["METRICS_DIR"]
-test_results_file = 'test_metadata.json'
-results_path = os.path.join(METRICS_DIR, test_results_file)
+eval_results_file = 'eval_metadata.json'
+metrics_path = os.path.join(METRICS_DIR, eval_results_file)
 
 # Serialize and save metadata
-with open(results_path, 'w') as outfile:
-    json.dump(test_metadata, outfile)
+with open(metrics_path, 'w') as outfile:
+    json.dump(eval_metadata, outfile)
