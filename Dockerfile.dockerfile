@@ -15,3 +15,5 @@ ENV METRICS_DIR=/home/jovyan/metrics
 COPY preprocessing.py ./pipeline/preprocessing.py
 COPY train.py ./pipeline/train.py
 COPY evaluate.py ./pipeline/test.py
+COPY traffic_Data
+COPY labels.csv ./labels/labels.csv
