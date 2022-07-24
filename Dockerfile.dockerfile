@@ -12,6 +12,6 @@ ENV RAW_DATA_DIR=/home/jovyan/raw_data
 ENV PROCESSED_DATA_DIR=/home/jovyan/processed_data
 ENV METRICS_DIR=/home/jovyan/metrics
 
-COPY preprocessing.py ./preprocessing.py
-COPY train.py ./train.py
-COPY evaluate.py ./test.py
+COPY preprocessing.py ./pipeline/preprocessing.py
+COPY train.py ./pipeline/train.py
+COPY evaluate.py ./pipeline/test.py
