@@ -9,6 +9,9 @@ MODEL_DIR = os.environ["MODEL_DIR"]
 model_file = 'cnn_model.joblib'
 model_path = os.path.join(MODEL_DIR, model_file)
 
+# Load model
+cnn_model = load(model_path)
+
 # Set path for the input test data
 PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
 X_test_path = os.path.join(PROCESSED_DATA_DIR, 'X_test_ds.txt')
@@ -23,8 +26,7 @@ X_test = loaded_X_test.reshape(loaded_X_test.shape[0], loaded_X_test.shape[1] //
 
 
 
-# Load model
-cnn_model = load(model_path)
+
 
 # Compute test accuracy
 score=cnn_model.evaluate(X_test,Y_test,verbose=0)
