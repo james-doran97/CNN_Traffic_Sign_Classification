@@ -9,7 +9,7 @@ After 20 Epochs of training, model accuracy is 97.4%, with a loss of 0.0885.
 
 
 ML Pipeline split into 4 steps, Preprocessing, Training, Evaluation, Deployment.
-This pipeline is containerised and run through a Jenkins localhost. 
+This pipeline is containerised and run through a Jenkins localhost. Localhost server made publically accessible by temporarily tunnelling traffic using ngrok.
 
 For initial stage, Jenkins pipelins is structured in seperate jobs.
 
