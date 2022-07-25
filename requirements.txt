@@ -1,3 +1,6 @@
 tensorflow
 opencv-python
 pandas
+flask
+scipy
+scikit-learn
