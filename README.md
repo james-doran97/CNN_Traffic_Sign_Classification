@@ -1,6 +1,11 @@
 # CNN_Traffic_Sign_Classification
 
 CNN Classification model pipeline code, along with corresponding DockerFile.
+Initial experimentation took place in Jupyter notebook, can be seen in Experimentation directory.
+
+After 20 Epochs of training, model accuracy is 97.4%, with a loss of 0.0885. 
+![Screenshot](model_acc.png)
+![Screenshot](model_loss.png)
 
 ML Pipeline split into 4 steps, Preprocessing, Training, Evaluation, Deployment.
 This pipeline is containerised and run through a Jenkins localhost. 
