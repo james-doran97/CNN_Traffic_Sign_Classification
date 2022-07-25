@@ -6,6 +6,7 @@ import pandas as pd
 import os
 import cv2
 from sklearn.model_selection import train_test_split
+from keras.utils.np_utils import to_categorical
 
 # Image data, labels, and hyperparameters path 
 labels_path = ".\\labels\\labels.csv"
