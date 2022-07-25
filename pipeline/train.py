@@ -6,11 +6,7 @@ import numpy as np
 from tensorflow.keras.layers import Dense , Flatten , Dropout , Conv2D , MaxPooling2D
 from tensorflow.keras.models import Model , Sequential
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.layers.experimental.preprocessing import Rescaling
-from tensorflow.keras.callbacks import EarlyStopping
-from keras.utils.np_utils import to_categorical
 from joblib import dump
-from sklearn.model_selection import StratifiedKFold, cross_val_score
 
 # Paths to data defined
 PROCESSED_DATA_DIR = os.environ["PROCESSED_DATA_DIR"]
