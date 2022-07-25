@@ -7,8 +7,21 @@ After 20 Epochs of training, model accuracy is 97.4%, with a loss of 0.0885.
 ![Screenshot](model_acc.png)
 ![Screenshot](model_loss.png)
 
+
 ML Pipeline split into 4 steps, Preprocessing, Training, Evaluation, Deployment.
 This pipeline is containerised and run through a Jenkins localhost. 
+
+For initial stage, Jenkins pipelins is structured in seperate jobs.
+
+## Jenkins
+- First Job defines the connection to the GitHub repo, and triggers whenever a code change is made
+- Docker image built from DockerFile
+- DockerFile creates local directories for raw data, processed data, metrics, and the model. Then copies files over to container, and installs the dependencies defined in requirements.txt
+- Container then run
+- Preproessing job runs on completion of first initial job, with code defined in preprocessing.py
+- Training job then executed, from code defined in train.py
+- Evaluate job then executed, from code defined in evaluate.py
+- Deploy job then executed, from code defined in deploy.py
 
 
 
