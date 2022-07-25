@@ -22,7 +22,7 @@ For initial stage, Jenkins pipelins is structured in seperate jobs.
 - Training job then executed, from code defined in train.py
 - Evaluate job then executed, from code defined in evaluate.py
 - Deploy job then executed, from code defined in deploy.py
-
+![Screenshot](jenkins_screenshot.png)
 
 
 ## Preprocesssing 
